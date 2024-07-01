@@ -1,11 +1,13 @@
-const firstName = 'Willow';
+let firstName = 'Willow';
+let age = 30;
+let isStudent = false;
 
-console.log(firstName);
+//firstName = 20;
+firstName = 'Sam';
 
-const inputs = document.querySelectorAll('input');
+// Explicitly state that the function argument must be a number.
+const circ = (diameter: number) => {
+  return diameter * Math.PI;
+};
 
-console.log(inputs);
-
-inputs.forEach((input) => {
-  console.log(input);
-});
+console.log(circ(20));

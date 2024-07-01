@@ -1,7 +1,10 @@
 var firstName = 'Willow';
-console.log(firstName);
-var inputs = document.querySelectorAll('input');
-console.log(inputs);
-inputs.forEach(function (input) {
-    console.log(input);
-});
+var age = 30;
+var isStudent = false;
+//firstName = 20;
+firstName = 'Sam';
+// Explicitly state that the function argument must be a number.
+var circ = function (diameter) {
+    return diameter * Math.PI;
+};
+console.log(circ(20));
