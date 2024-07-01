@@ -1,13 +1,25 @@
-let firstName = 'Willow';
-let age = 30;
-let isStudent = false;
+// Arrays
 
-//firstName = 20;
-firstName = 'Sam';
+let names = ['Sam', 'Willow', 'Silje'];
+names.push('Gary');
+console.log(names);
 
-// Explicitly state that the function argument must be a number.
-const circ = (diameter: number) => {
-  return diameter * Math.PI;
+let numbers = [10, 20, 30, 40];
+numbers.push(50);
+console.log(numbers);
+
+let mixedArray = ['Sam', 10, 'Willow', 20, 'Silje', 30];
+mixedArray.push('Gary', 40);
+console.log(mixedArray);
+
+// Objects
+
+let example = {
+  name: 'Sam',
+  food: 'Pizza',
+  age: 18,
 };
 
-console.log(circ(20));
+example.age = 40;
+example.name = 'Harry';
+console.log(example);
