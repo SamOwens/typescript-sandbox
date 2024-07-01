@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Roboto;
+  font-family: Arial;
 }
 .wrapper {
   max-width: 960px;
@@ -31,8 +31,8 @@ li p {
 }
 footer {
   background: #eee;
-  padding: 60px;
-  margin-top: 60px;
+  padding: 2rem;
+  margin-top: 2rem;
 }
 form {
   max-width: 960px;
@@ -63,6 +63,7 @@ button {
   padding: 6px;
   min-width: 80px;
   border-radius: 4px;
+  margin-top: 2rem;
 }
 footer a {
   text-align: center;
@@ -70,4 +71,15 @@ footer a {
   color: #999;
   margin-top: 40px;
   font-size: 0.7em;
+}
+.new-item-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .new-item-form {
+    flex-direction: column;
+  }
 }
