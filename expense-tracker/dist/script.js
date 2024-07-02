@@ -1,11 +1,16 @@
 "use strict";
 // Define a class named Invoice
 class Invoice {
+    // Properties of the Invoice class
+    // readonly client: string;
+    // private details: string;
+    // public by default, but can be explicitly stated.
+    // public amount: number;
     // Constructor to initialize the properties
-    constructor(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
+    constructor(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
     }
     // Method to format the invoice details into a string
     format() {
@@ -19,12 +24,10 @@ const invTwo = new Invoice('Example Client 2', 'Web Work', 200);
 let invoices = [];
 invoices.push(invOne); // Add the first invoice to the array
 invoices.push(invTwo); // Add the second invoice to the array
-// Modify the properties of the invoice instances
-invOne.client = 'Sam';
-invTwo.amount = 500;
-console.log(invoices);
+invoices.forEach(invoice => {
+    console.log(invoice.client, invoice.amount, invoice.format());
+});
 const form = document.querySelector('.new-item-form');
-// console.log(form.children);
 // Inputs
 const type = document.querySelector('#type');
 const toFrom = document.querySelector('#tofrom');
