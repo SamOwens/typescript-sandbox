@@ -1,25 +1,19 @@
 "use strict";
-//let greet: Function;
-// Example 1
-let greet;
-greet = (name, greeting) => {
-    console.log(`${name} says ${greeting}`);
-};
-greet('Sam', 'Hello');
-// Example 2
-let calc;
-calc = (numOne, numTwo, action) => {
-    if (action === 'add') {
-        return numOne + numTwo;
-    }
-    else {
-        return numOne - numTwo;
-    }
-};
-console.log(calc(1, 2, 'add'));
-// Exmaple 3
-let logDetails;
-logDetails = (example) => {
-    console.log(`${example.name} is ${example.age} years old`);
-};
-logDetails({ name: 'Sam', age: 32 });
+// const anchor = document.querySelector('a')!;
+// if (anchor) {
+//  console.log(anchor?.href)
+// }
+// console.log(anchor.href)
+// const form = document.querySelector('form')!;
+const form = document.querySelector('.new-item-form');
+// console.log(form.children);
+// Inputs
+const type = document.querySelector('#type');
+const toFrom = document.querySelector('#tofrom');
+const details = document.querySelector('#details');
+const amount = document.querySelector('#amount');
+const button = document.querySelector('button');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log(type.value, toFrom.value, details.value, amount.valueAsNumber);
+});

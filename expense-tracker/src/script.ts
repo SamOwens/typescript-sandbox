@@ -1,30 +1,32 @@
-//let greet: Function;
+// const anchor = document.querySelector('a')!;
 
-// Example 1
-let greet: (a: string, b: string) => void;
-greet = (name: string, greeting: string) => {
-  console.log(`${name} says ${greeting}`)
-}
-greet('Sam', 'Hello');
+// if (anchor) {
+//  console.log(anchor?.href)
+// }
 
-// Example 2
-let calc: (a: number, b: number, c: string) => number;
-calc = (numOne: number, numTwo: number, action: string) => {
-  if (action === 'add'){
-    return numOne + numTwo
-  } else {
-    return numOne - numTwo
-  }
-}
-console.log(calc(1,2,'add'))
+// console.log(anchor.href)
 
-// Exmaple 3
-let logDetails: (obj: {name: string, age: number}) => void;
+// const form = document.querySelector('form')!;
 
-type person = {name: string, age: number}
+const form = document.querySelector('.new-item-form') as HTMLFormElement;
+// console.log(form.children);
 
-logDetails = (example: person) => {
-  console.log(`${example.name} is ${example.age} years old`)
-}
-logDetails({name: 'Sam', age: 32});
+// Inputs
 
+const type = document.querySelector('#type') as HTMLSelectElement;
+const toFrom = document.querySelector('#tofrom') as HTMLInputElement;
+const details = document.querySelector('#details') as HTMLInputElement;
+const amount = document.querySelector('#amount') as HTMLInputElement;
+const button = document.querySelector('button')!;
+
+form.addEventListener('submit', (e: Event) => {
+e.preventDefault();
+
+console.log(
+  type.value, 
+  toFrom.value, 
+  details.value, 
+  amount.valueAsNumber
+)
+
+})
