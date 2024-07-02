@@ -1,12 +1,37 @@
-// const anchor = document.querySelector('a')!;
+// Define a class named Invoice
+class Invoice {
+  // Properties of the Invoice class
+  client: string;
+  details: string;
+  amount: number;
 
-// if (anchor) {
-//  console.log(anchor?.href)
-// }
+  // Constructor to initialize the properties
+  constructor(c: string, d: string, a: number) {
+    this.client = c;
+    this.details = d;
+    this.amount = a;
+  }
 
-// console.log(anchor.href)
+  // Method to format the invoice details into a string
+  format() {
+    return `${this.client} owes £${this.amount} for ${this.details}`;
+  }
+}
 
-// const form = document.querySelector('form')!;
+// Create instances of the Invoice class
+const invOne = new Invoice('Example Client', 'Web Work', 250);
+const invTwo = new Invoice('Example Client 2', 'Web Work', 200);
+
+// Create an array to store Invoice objects
+let invoices: Invoice[] = [];
+invoices.push(invOne); // Add the first invoice to the array
+invoices.push(invTwo); // Add the second invoice to the array
+
+// Modify the properties of the invoice instances
+invOne.client = 'Sam';
+invTwo.amount = 500;
+
+console.log(invoices)
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 // console.log(form.children);
