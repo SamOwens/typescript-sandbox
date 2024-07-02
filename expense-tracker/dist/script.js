@@ -1,3 +1,19 @@
+const me = {
+    name: 'Sam',
+    age: 32,
+    speak(text) {
+        console.log(text);
+    },
+    spend(amount) {
+        console.log(`I spent ${amount}`);
+        return amount;
+    }
+};
+let someone;
+const greetPerson = (person) => {
+    console.log(`Hello ${person.name}`);
+};
+greetPerson(me);
 import { Invoice } from './classes/Invoice.js';
 // Create instances of the Invoice class
 const invOne = new Invoice('Example Client', 'Web Work', 250);
