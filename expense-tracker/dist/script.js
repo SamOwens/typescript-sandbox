@@ -1,22 +1,4 @@
-"use strict";
-// Define a class named Invoice
-class Invoice {
-    // Properties of the Invoice class
-    // readonly client: string;
-    // private details: string;
-    // public by default, but can be explicitly stated.
-    // public amount: number;
-    // Constructor to initialize the properties
-    constructor(client, details, amount) {
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
-    }
-    // Method to format the invoice details into a string
-    format() {
-        return `${this.client} owes £${this.amount} for ${this.details}`;
-    }
-}
+import { Invoice } from './classes/Invoice.js';
 // Create instances of the Invoice class
 const invOne = new Invoice('Example Client', 'Web Work', 250);
 const invTwo = new Invoice('Example Client 2', 'Web Work', 200);
