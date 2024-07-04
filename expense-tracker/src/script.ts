@@ -1,45 +1,32 @@
-// Interfaces
-// If we have a variable in future declating itself as IsPerson, it must have these properties and methods
-interface IsPerson {
-  name: string;
-  age: number; 
-  speak(a: string): void;
-  spend(a: number): number;
-}
-
-const me: IsPerson = {
-  name: 'Sam',
-  age: 32,
-  speak(text: string): void {
-    console.log(text)
-  },
-  spend(amount: number): number {
-    console.log(`I spent ${amount}`);
-    return amount;
-  }
-};
-
-let someone: IsPerson;
-const greetPerson = (person: IsPerson) => {
-  console.log(`Hello ${person.name}`)
-}
-greetPerson(me);
-
-
 import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+import { HasFormatter } from './interfaces/HasFormatter.js';
+
+// let docOne: HasFormatter;
+// let docTwo: HasFormatter;
+
+// docOne = new Invoice('Sam', 'Web Work', 250);
+// docTwo = new Payment('Silje', 'Web Design Work', 400);
+
+// let docs: HasFormatter[] = [];
+
+// docs.push(docOne);
+// docs.push(docTwo);
+
+// console.log(docs);
 
 // Create instances of the Invoice class
-const invOne = new Invoice('Example Client', 'Web Work', 250);
-const invTwo = new Invoice('Example Client 2', 'Web Work', 200);
+// const invOne = new Invoice('Example Client', 'Web Work', 250);
+// const invTwo = new Invoice('Example Client 2', 'Web Work', 200);
 
-// Create an array to store Invoice objects
-let invoices: Invoice[] = [];
-invoices.push(invOne); // Add the first invoice to the array
-invoices.push(invTwo); // Add the second invoice to the array
+// // Create an array to store Invoice objects
+// let invoices: Invoice[] = [];
+// invoices.push(invOne);
+// invoices.push(invTwo);
 
-invoices.forEach(invoice => {
-  console.log(invoice.client,invoice.amount, invoice.format())
-})
+// invoices.forEach((invoice) => {
+//   console.log(invoice.client, invoice.amount, invoice.format());
+// });
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 
@@ -53,10 +40,12 @@ const button = document.querySelector('button')!;
 form.addEventListener('submit', (e: Event) => {
   e.preventDefault();
 
-  console.log(
-    type.value, 
-    toFrom.value, 
-    details.value, 
-    amount.valueAsNumber
-  )
-})
+  let doc: HasFormatter;
+  if (type.value === 'invoice') {
+    doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+  } else {
+    doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+  }
+
+  console.log(doc);
+});
